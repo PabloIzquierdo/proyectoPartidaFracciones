@@ -18,16 +18,32 @@ public class Fraccion {
 	}
 
 	
+	public Fraccion simplifica(Fraccion entrada) {
+		int div = 2;
+		Fraccion entrada2 = entrada;
+		while(CalculosMatematicos.esPrimo(entrada2.numerador) == false && CalculosMatematicos.esPrimo(entrada2.denominador) == false ){
+			if(entrada2.numerador % div == 0 && entrada2.denominador % div == 0) {
+				entrada2.numerador /= div;
+				entrada2.denominador /= div;
+			}else {
+				div ++;
+			}
+		}
+		return entrada2;
+	}
+	
+	public Fraccion suma(Fraccion sumando1, Fraccion sumando2) {
+		Fraccion suma = new Fraccion();
+		if(sumando1.denominador != sumando2.denominador) {
+			suma.setDenominador(sumando1.denominador * sumando2.denominador);
+			suma.setNumerador(sumando1.numerador * sumando2.denominador+sumando2.numerador * sumando1.denominador);
+		}else {
+			suma.setNumerador(sumando1.numerador+sumando2.numerador);
+			suma.setDenominador(sumando1.denominador);
+		}
+		return suma;
+	}
 	/*
-	 * 	Añadir las siguientes operaciones a Fracción
-	 * 
-	 * 
-	 * 
-		public static Fraccion simplifica(Fraccion entrada) {
-		}
-		
-		public static Fraccion suma(Fraccion sumando1, Fraccion sumando2) {
-		}
 		public static Fraccion multiplicacion(Fraccion sumando1, Fraccion sumando2) {
 		}
 		public static Fraccion division(Fraccion sumando1, Fraccion sumando2) {
