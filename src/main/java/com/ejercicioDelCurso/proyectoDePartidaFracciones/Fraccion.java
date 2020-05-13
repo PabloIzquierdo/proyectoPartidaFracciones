@@ -43,12 +43,22 @@ public class Fraccion {
 		}
 		return suma;
 	}
-	/*
-		public static Fraccion multiplicacion(Fraccion sumando1, Fraccion sumando2) {
+	
+		public Fraccion multiplicacion(Fraccion sumando1, Fraccion sumando2) {
+			Fraccion suma = new Fraccion();
+			suma.setNumerador(sumando1.numerador * sumando2.numerador);
+			suma.setDenominador(sumando1.denominador * sumando2.denominador);
+			return suma;
+			
 		}
-		public static Fraccion division(Fraccion sumando1, Fraccion sumando2) {
+		
+		public Fraccion division(Fraccion sumando1, Fraccion sumando2) {
+			Fraccion suma = new Fraccion();
+			suma.setNumerador(sumando1.numerador * sumando2.denominador);
+			suma.setDenominador(sumando1.denominador * sumando2.numerador);
+			return suma;
 		}
-	*/
+	
 	public int getNumerador() {
 		return numerador;
 	}
