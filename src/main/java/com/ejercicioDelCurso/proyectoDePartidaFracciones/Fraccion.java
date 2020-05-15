@@ -49,6 +49,34 @@ public class Fraccion {
 		public static Fraccion division(Fraccion sumando1, Fraccion sumando2) {
 		}
 	*/
+	public int maximoComunDivisor(Fraccion fr1) {
+		Fraccion f1 = new Fraccion(fr1.numerador,fr1.denominador);
+		int mcd = 1;
+		int cont = 2;
+		while(cont < f1.denominador || cont < f1.denominador) {
+			if(f1.numerador%cont == 0 && f1.denominador%cont == 0) {
+				mcd *= cont;
+				f1.numerador /= cont;
+				f1.denominador /= cont;
+			}else {
+				cont++;
+			}
+			
+		}
+		return mcd;
+	}
+	
+	public int minimoComunMultiplo(Fraccion fr1) {
+		Fraccion f1 = new Fraccion(fr1.numerador,fr1.denominador);
+		int mcm = 0;
+		int a = Math.max(f1.numerador, f1.denominador);
+		int b = Math.min(f1.numerador, f1.denominador);
+		Fraccion aux = new Fraccion(a,b);
+		mcm = (a/maximoComunDivisor(aux))*b;
+		return mcm;
+		
+	}
+	
 	public int getNumerador() {
 		return numerador;
 	}

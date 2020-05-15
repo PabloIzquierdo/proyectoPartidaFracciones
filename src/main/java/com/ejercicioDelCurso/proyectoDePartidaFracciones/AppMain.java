@@ -34,6 +34,11 @@ public class AppMain {
 		Fraccion suma2 = new Fraccion(9,6);
 		salida = salida.suma(suma1, suma2);
 		System.out.println("\n\nSuma Fracciones: "+suma1.toString()+ " + " +suma2.toString()+" = "+salida);
+		int mcd = salida.maximoComunDivisor(salida);
+		System.out.println("\n\nMaximo común divisor de "+ salida +" -> "+ mcd);
+		salida = new Fraccion(12,18);
+		int mcm = salida.minimoComunMultiplo(salida);
+		System.out.println("\n\nMinimo común múltiplo de "+ salida +" -> "+ mcm);
 	}
 
 }
