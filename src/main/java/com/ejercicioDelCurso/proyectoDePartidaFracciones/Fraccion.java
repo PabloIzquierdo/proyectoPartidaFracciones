@@ -58,6 +58,49 @@ public class Fraccion {
 			suma.setDenominador(sumando1.denominador * sumando2.numerador);
 			return suma;
 		}
+				
+		public Fraccion descomponer(Fraccion sumando1) {
+			int divisor=2;
+			while (sumando1.getNumerador()%divisor==0 && sumando1.getDenominador()%divisor==0 && sumando1.esPrimo(divisor)==true) {
+				divisor++;
+				sumando1.setNumerador(sumando1.getNumerador()/divisor);
+				sumando1.setDenominador(sumando1.getDenominador()/divisor);
+			}
+			
+			
+			return sumando1;
+			
+			
+			
+		}
+		
+		public boolean esPrimo (int divisor) {
+			boolean resp=false;
+			int cont=0;
+			int div=1;
+		  		
+			while (div<=divisor) {
+				if (divisor%div==0) {
+					cont++;
+				}
+				div++;
+				
+			}
+			if (cont <= 2) {
+				resp = true;
+				
+			}	else {
+				resp=false;
+				
+			}	
+			
+			
+			return resp;
+		}
+		
+		
+		
+		
 	
 	public int getNumerador() {
 		return numerador;

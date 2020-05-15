@@ -1,5 +1,6 @@
 package com.ejercicioDelCurso.proyectoDePartidaFracciones;
 
+import java.util.Arrays;
 import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
@@ -13,7 +14,7 @@ public class AppMain {
 		 * Este método descompone un número en factores primos
 		 * Retornando un mapa con los factores primos
 		 */
-		
+				
 		int num = 180;
 		SortedMap<Integer,Integer> divisores = new TreeMap<>();
 		divisores=CalculosMatematicos.divisores(num);
@@ -49,6 +50,12 @@ public class AppMain {
 		Fraccion result=new Fraccion();
 		result=result.division(divi1, divi2);
 		System.out.println(result);
+		
+
+		
+		Fraccion descompuesta=new Fraccion(12,24);
+		descompuesta=descompuesta.descomponer(descompuesta);
+		System.out.println(descompuesta);
 	
 	}
 
