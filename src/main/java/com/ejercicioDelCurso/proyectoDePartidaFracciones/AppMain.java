@@ -50,6 +50,11 @@ public class AppMain {
 		result=result.division(divi1, divi2);
 		System.out.println(result);
 	
+		int mcd = salida.maximoComunDivisor(salida);
+		System.out.println("\n\nMaximo común divisor de "+ salida +" -> "+ mcd);
+		salida = new Fraccion(12,18);
+		int mcm = salida.minimoComunMultiplo(salida);
+		System.out.println("\n\nMinimo común múltiplo de "+ salida +" -> "+ mcm);
 	}
 
 }
